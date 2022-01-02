@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #ced4da;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper {
+    width: 1200px;
+    height: 600px;
+    border-radius: 14px;
+    background: linear-gradient(to bottom right, #6c757d, #212529);
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+
+    .calendar-area {
+        width: 870px;
+        height: inherit;
+        padding: 55px 80px 50px 50px;
+        box-sizing: border-box;
+
+        .cal-nav {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            padding: 0 30px;
+            margin-bottom: 70px;
+            .back {
+                cursor: pointer;
+                background: none;
+                border: none;
+                color: #fff;
+            }
+            .months-nav {
+                display: flex;
+                align-items: center;
+                .prev, .next {
+                    display: flex;
+                    align-items: center;
+                    color: #dee2e6;
+                    cursor: pointer;
+                }
+                .month {
+                    padding: 0 26px;
+                    text-transform: capitalize;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .cal-table {
+            table {
+                width: 100%;
+                tr {
+                    border-bottom-width: 45px;
+                    border-style: solid;
+                    border-bottom-color: transparent;
+                    th {
+                        text-transform: capitalize;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #dee2e6;
+                    }
+                    td {
+                        text-align: center;
+                        font-weight: 500;
+                        color: #f8f9fa;
+                        position: relative;
+                        cursor: pointer;
+                        &.disabled {
+                            color: #8d959d;
+                        }
+                        &.reminder {
+                            position: relative;
+                            &::after {
+                                content: "";
+                                width: 28px;
+                                height: 2px;
+                                background-color: #24f892;
+                                position: absolute;
+                                left: 50%;
+                                transform: translate(-50%, 0);
+                                top: 30px;
+                            }
+                        }
+                        &.range {
+                            position: relative;
+                            &::after {
+                                content: "";
+                                width: 42px;
+                                height: 42px;
+                                border-radius: 12px;
+                                background-color: #ff4b4c;
+                                position: absolute;
+                                left: 50%;
+                                transform: translate(-50%, 0);
+                                top: -14px;
+                            }
+                            span {
+                                position: relative;
+                                z-index: 9;
+                            }
+                        }
+                        &.range-dates {
+                            color: #ff4b4c;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ticket-area {
+        position: relative;
+        width: 330px;
+        height: inherit;
+        padding: 55px 40px;
+        background-color: rgb(108 117 125 / 30%);
+        color: #fff;
+        box-sizing: border-box;
+        .title {
+            display: flex;
+            align-items: center;
+            .avatar {
+                position: relative;
+                height: 34px;
+                width: 34px;
+                // overflow: hidden;
+                img {
+                    border-radius: 8px;
+                    height: 100%;
+                }
+                .status {
+                    position: absolute;
+                    display: block;
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 50%;
+                    background-color: #24f892;
+                    border: 1px solid #212529;
+                    top: -2px;
+                    right: -2px;
+                }
+            }
+            .user {
+                text-decoration: none;
+                margin-left: 20px;
+                text-transform: capitalize;
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+            }
+        }
+        .destination {
+            margin-top: 55px;
+            display: flex;
+            justify-content: space-between;
+            .place {
+                .city {
+                    display: block;
+                    text-transform: uppercase;
+                    font-size: 28px;
+                    font-weight: 500;
+                }
+                .country {
+                    display: block;
+                    text-transform: capitalize;
+                    font-size: 13px;
+                    color: #8d959d;
+                    position: relative;
+                    top: 6px;
+                    text-align: center;
+                }
+            }
+            .symbol {
+                position: relative;
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                svg {
+                    fill: #fff;
+                }
+                hr {
+                    width: 125px;
+                    border: none;
+                    border-top: 3px dashed rgb(141 149 157 / 50%);
+                    position: relative;
+                    bottom: 19px;
+                }
+                &::before {
+                    content: "";
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    z-index: 9;
+                    left: 0;
+                    background: linear-gradient(90deg, #50575e, rgb(80 87 94 / 20%));
+                }
+                &::after {
+                    content: "";
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    z-index: 9;
+                    right: 0;
+                    background: linear-gradient(270deg, #4e545a, rgb(80 87 94 / 20%));
+                }
+            }
+        }
+
+        .ticket-allocation {
+            margin-top: 35px;
+            .price-detail {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #575f65;
+                padding: 26px 18px;
+                border-radius: 8px;
+                box-shadow: 0px 1px 8px 5px rgb(54 60 65 / 10%);
+                .price {
+                    font-size: 19px;
+                    font-weight: 600;
+                }
+                .seats-alloted {
+                    font-size: 13px;
+                    color: #8d959d;
+                }
+            }
+            .edit {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                background-color: #575f65;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+                position: relative;
+                bottom: 14px;
+                box-shadow: 0px 1px 8px 5px rgb(54 60 65 / 10%);
+                svg {
+                    height: 16px;
+                    fill: #24f892;
+                }
+            }
+
+            .flight-date {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 16px;
+                
+                .f-date {
+                    text-transform: capitalize;
+                    font-size: 12px;
+                    font-weight: 600;
+                    border: 1px solid #575f65;
+                    padding: 9px 22px;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .exit-area {
+            position: relative;
+            top: 80px;
+            .order-window {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+                .desc {
+                    display: flex;
+                    align-items: center;
+                    color: #8d959d;
+                    span {
+                        font-size: 12px;
+                        margin-left: 6px;
+                    }
+                }
+                .time {
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+            }
+            .confirm {
+                text-transform: capitalize;
+                background-color: #24f892;
+                border: none;
+                width: 100%;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 16px 0;
+                border-radius: 8px;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 36px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: #575f65;
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+        }
+    }
+}

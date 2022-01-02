@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #ced4da;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  width: 1200px;
+  height: 600px;
+  border-radius: 14px;
+  background: linear-gradient(to bottom right, #6c757d, #212529);
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+}
+.wrapper .calendar-area {
+  width: 870px;
+  height: inherit;
+  padding: 55px 80px 50px 50px;
+  box-sizing: border-box;
+}
+.wrapper .calendar-area .cal-nav {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0 30px;
+  margin-bottom: 70px;
+}
+.wrapper .calendar-area .cal-nav .back {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+}
+.wrapper .calendar-area .cal-nav .months-nav {
+  display: flex;
+  align-items: center;
+}
+.wrapper .calendar-area .cal-nav .months-nav .prev, .wrapper .calendar-area .cal-nav .months-nav .next {
+  display: flex;
+  align-items: center;
+  color: #dee2e6;
+  cursor: pointer;
+}
+.wrapper .calendar-area .cal-nav .months-nav .month {
+  padding: 0 26px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+}
+.wrapper .calendar-area .cal-table table {
+  width: 100%;
+}
+.wrapper .calendar-area .cal-table table tr {
+  border-bottom-width: 45px;
+  border-style: solid;
+  border-bottom-color: transparent;
+}
+.wrapper .calendar-area .cal-table table tr th {
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 400;
+  color: #dee2e6;
+}
+.wrapper .calendar-area .cal-table table tr td {
+  text-align: center;
+  font-weight: 500;
+  color: #f8f9fa;
+  position: relative;
+  cursor: pointer;
+}
+.wrapper .calendar-area .cal-table table tr td.disabled {
+  color: #8d959d;
+}
+.wrapper .calendar-area .cal-table table tr td.reminder {
+  position: relative;
+}
+.wrapper .calendar-area .cal-table table tr td.reminder::after {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background-color: #24f892;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 30px;
+}
+.wrapper .calendar-area .cal-table table tr td.range {
+  position: relative;
+}
+.wrapper .calendar-area .cal-table table tr td.range::after {
+  content: "";
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #ff4b4c;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -14px;
+}
+.wrapper .calendar-area .cal-table table tr td.range span {
+  position: relative;
+  z-index: 9;
+}
+.wrapper .calendar-area .cal-table table tr td.range-dates {
+  color: #ff4b4c;
+}
+.wrapper .ticket-area {
+  position: relative;
+  width: 330px;
+  height: inherit;
+  padding: 55px 40px;
+  background-color: rgba(108, 117, 125, 0.3);
+  color: #fff;
+  box-sizing: border-box;
+}
+.wrapper .ticket-area .title {
+  display: flex;
+  align-items: center;
+}
+.wrapper .ticket-area .title .avatar {
+  position: relative;
+  height: 34px;
+  width: 34px;
+}
+.wrapper .ticket-area .title .avatar img {
+  border-radius: 8px;
+  height: 100%;
+}
+.wrapper .ticket-area .title .avatar .status {
+  position: absolute;
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #24f892;
+  border: 1px solid #212529;
+  top: -2px;
+  right: -2px;
+}
+.wrapper .ticket-area .title .user {
+  text-decoration: none;
+  margin-left: 20px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.wrapper .ticket-area .destination {
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .ticket-area .destination .place .city {
+  display: block;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 500;
+}
+.wrapper .ticket-area .destination .place .country {
+  display: block;
+  text-transform: capitalize;
+  font-size: 13px;
+  color: #8d959d;
+  position: relative;
+  top: 6px;
+  text-align: center;
+}
+.wrapper .ticket-area .destination .symbol {
+  position: relative;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper .ticket-area .destination .symbol svg {
+  fill: #fff;
+}
+.wrapper .ticket-area .destination .symbol hr {
+  width: 125px;
+  border: none;
+  border-top: 3px dashed rgba(141, 149, 157, 0.5);
+  position: relative;
+  bottom: 19px;
+}
+.wrapper .ticket-area .destination .symbol::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 9;
+  left: 0;
+  background: linear-gradient(90deg, #50575e, rgba(80, 87, 94, 0.2));
+}
+.wrapper .ticket-area .destination .symbol::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  background: linear-gradient(270deg, #4e545a, rgba(80, 87, 94, 0.2));
+}
+.wrapper .ticket-area .ticket-allocation {
+  margin-top: 35px;
+}
+.wrapper .ticket-area .ticket-allocation .price-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #575f65;
+  padding: 26px 18px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 8px 5px rgba(54, 60, 65, 0.1);
+}
+.wrapper .ticket-area .ticket-allocation .price-detail .price {
+  font-size: 19px;
+  font-weight: 600;
+}
+.wrapper .ticket-area .ticket-allocation .price-detail .seats-alloted {
+  font-size: 13px;
+  color: #8d959d;
+}
+.wrapper .ticket-area .ticket-allocation .edit {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #575f65;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  bottom: 14px;
+  box-shadow: 0px 1px 8px 5px rgba(54, 60, 65, 0.1);
+}
+.wrapper .ticket-area .ticket-allocation .edit svg {
+  height: 16px;
+  fill: #24f892;
+}
+.wrapper .ticket-area .ticket-allocation .flight-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.wrapper .ticket-area .ticket-allocation .flight-date .f-date {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #575f65;
+  padding: 9px 22px;
+  border-radius: 8px;
+}
+.wrapper .ticket-area .exit-area {
+  position: relative;
+  top: 80px;
+}
+.wrapper .ticket-area .exit-area .order-window {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.wrapper .ticket-area .exit-area .order-window .desc {
+  display: flex;
+  align-items: center;
+  color: #8d959d;
+}
+.wrapper .ticket-area .exit-area .order-window .desc span {
+  font-size: 12px;
+  margin-left: 6px;
+}
+.wrapper .ticket-area .exit-area .order-window .time {
+  font-size: 15px;
+  font-weight: 700;
+}
+.wrapper .ticket-area .exit-area .confirm {
+  text-transform: capitalize;
+  background-color: #24f892;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 16px 0;
+  border-radius: 8px;
+}
+.wrapper .ticket-area::before {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 36px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #575f65;
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,17 @@
+{
+  "name": "calendar-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "watch-sass": "sass -w css/main.scss css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.45.2",
+    "vite": "^2.7.10"
+  }
+}
